@@ -59,6 +59,21 @@ import (
  - ``` migrate -help ```
  - Create a Schema up and down files  ``` migrate create -ext sql -dir db/migration init_schema ```
  - Update the migrate up and down files
- - 
+ - Update Makefile for migrateup and down
 
-migrate -path db/migration -database "postgres:///root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+## 3  Using SQLC
+
+
+brew install kyleconroy/sqlc/sqlc
+<br>
+or 
+<br>
+go install github.com/kyleconroy/sqlc/cmd/sqlc@latest
+
+sqlc init to init the sqlc.yaml file 
+sqlc generate to generate the code or add it to make file and use make generate
+
+
+
+
+
