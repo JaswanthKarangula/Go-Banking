@@ -15,4 +15,6 @@ migrateup:
 migratedown:
 	migrate -path db/migration -database "$(DB_URL)" -verbose down
 
-.PHONY:  postgres createdb dropdb migrateup
+test:
+	go test -v -cover ./...
+.PHONY:  postgres createdb dropdb migrateup test
