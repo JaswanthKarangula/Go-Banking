@@ -1,7 +1,7 @@
 # Go-Banking
 
 <a href="https://github.com/JaswanthKarangula/Go-Banking/actions">
-      <img alt="Tests Passing" src="https://github.com/JaswanthKarangula/Go-Banking/actions/workflows/test.yml/badge.svg" />
+      <img alt="Tests Passing" src="https://github.com/JaswanthKarangula/Go-Banking/actions/workflows/test.yml/badge.svg?event=push" />
     </a>
 
 ## 1 Creating a Database
