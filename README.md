@@ -74,6 +74,8 @@ sqlc init to init the sqlc.yaml file
 sqlc generate to generate the code or add it to make file and use make generate
 
 
+``` *** Postgres Isolation levels```
+
 
 
 
