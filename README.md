@@ -80,5 +80,11 @@ sqlc generate to generate the code or add it to make file and use make generate
 ``` *** Postgres Isolation levels```
 
 
+Get Gin using ``` go get -u github.com/gin-gonic/gin```
+
+GOMOCK for mocking db in tests
+
+```go install github.com/golang/mock/mockgen@v1.6.0``` install mockgen and ``` which mockgen ``` If not visible add Go to Path
+
 
 
