@@ -17,4 +17,7 @@ migratedown:
 
 test:
 	go test -v -cover ./...
-.PHONY:  postgres createdb dropdb migrateup test
+
+mock:
+	mockgen -package mockdb -destination db/mock/store.go  github.com/JaswanthKarangula/Go-Banking/db/sqlc Store
+.PHONY:  postgres createdb dropdb migrateup test mock

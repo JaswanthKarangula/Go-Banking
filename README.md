@@ -88,3 +88,6 @@ GOMOCK for mocking db in tests
 
 
 
+Mocking database to generate tests
+
+mockgen -package mockdb -destination db/mock/store.go  github.com/JaswanthKarangula/Go-Banking/db/sqlc Store
