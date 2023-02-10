@@ -2,11 +2,11 @@ package db
 
 import (
 	"database/sql"
+	"github.com/JaswanthKarangula/Go-Banking/util"
 	"log"
 	"os"
 	"testing"
 
-	"github.com/JaswanthKarangula/Go-Banking/util"
 	_ "github.com/lib/pq"
 )
 
