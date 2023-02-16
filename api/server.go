@@ -54,6 +54,8 @@ func HealthCheck(c *gin.Context) {
 		"data": "Server is up and running",
 	}
 
+	// https://santoshk.dev/posts/2022/how-to-integrate-swagger-ui-in-go-backend-gin-edition/
+
 	c.JSON(http.StatusOK, res)
 }
 
