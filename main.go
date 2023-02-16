@@ -4,11 +4,28 @@ import (
 	"database/sql"
 	"github.com/JaswanthKarangula/Go-Banking/api"
 	db "github.com/JaswanthKarangula/Go-Banking/db/sqlc"
+	_ "github.com/JaswanthKarangula/Go-Banking/docs"
 	"github.com/JaswanthKarangula/Go-Banking/util"
-	"log"
-
 	_ "github.com/lib/pq"
+	"log"
 )
+
+// @title Gin Swagger Example API
+// @version 1.0
+// @description This is a sample server.
+// @termsOfService http://swagger.io/terms/
+
+// @contact.name API Support
+// @contact.url http://www.swagger.io/support
+// @contact.email support@swagger.io
+
+// @license.name Apache 2.0
+// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
+
+// @host localhost:8080
+// @BasePath /
+// @schemes http
+// @query.collection.format multi
 
 func main() {
 	config, err := util.LoadConfig(".")

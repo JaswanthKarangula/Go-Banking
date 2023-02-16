@@ -5,10 +5,12 @@ import (
 	db "github.com/JaswanthKarangula/Go-Banking/db/sqlc"
 	"github.com/JaswanthKarangula/Go-Banking/token"
 	"github.com/JaswanthKarangula/Go-Banking/util"
-
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/validator/v10"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"net/http"
 )
 
 // Server serves HTTP requests for our banking service.
@@ -40,9 +42,28 @@ func NewServer(config util.Config, store db.Store) (*Server, error) {
 	return server, nil
 }
 
+// HealthCheck getHealth godoc
+// @Summary      Get books array
+// @Description  Responds with the list of all books as JSON.
+// @Tags         books
+// @Produce      json
+// @Success      200
+// @Router       /h [get]
+func HealthCheck(c *gin.Context) {
+	res := map[string]interface{}{
+		"data": "Server is up and running",
+	}
+
+	c.JSON(http.StatusOK, res)
+}
+
 func (server *Server) setupRouter() {
 	router := gin.Default()
 
+	url := ginSwagger.URL("/swagger/doc.json") // The url pointing to API definition
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
+
+	router.GET("/h", HealthCheck)
 	router.POST("/users", server.createUser)
 	router.POST("/users/login", server.loginUser)
 
