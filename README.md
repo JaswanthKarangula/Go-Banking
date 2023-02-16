@@ -91,3 +91,20 @@ GOMOCK for mocking db in tests
 Mocking database to generate tests
 
 mockgen -package mockdb -destination db/mock/store.go  github.com/JaswanthKarangula/Go-Banking/db/sqlc Store
+
+
+
+## Deploying
+
+
+docker rm simplebank
+docker build -t simplebank:latest .    
+docker run --name simplebank -p 8080:8080 simplebank:latest
+
+docker network create bank-network
+docker network conect bank-network postgres
+docker network inspect bank-network
+docker container inspect postgres
+
+
+docker run --name simplebank --network bank-network -p 8080:8080 -e DB_SOURCE="postgresql://root:secret@postgres:5432/simple_bank?sslmode=disable" simplebank:latest
